@@ -15,7 +15,7 @@ RSpec.describe LogsView do
     let(:expected_results) do
       { '/home' => 5, '/index' => 5, '/about' => 2 }
     end
-    context 'when most views is requested' do
+    context 'when shows all most views' do
       it 'should return the most views' do
         expect(logs_view.most_views).to eq(expected_results)
       end
@@ -26,7 +26,7 @@ RSpec.describe LogsView do
     let(:expected_results) do
       { '/home' => 5, '/index' => 4, '/about' => 1 }
     end
-    context 'when unique views is requested' do
+    context 'when shows all unique views' do
       it 'should return the unique views' do
         expect(logs_view.unique_views).to eq(expected_results)
       end

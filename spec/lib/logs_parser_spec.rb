@@ -5,7 +5,7 @@ RSpec.describe LogsParser do
   subject(:logs_parser) { described_class.new(logfile_path) }
 
   describe '#new' do
-    context 'empty file given' do
+    context 'with empty file' do
       let(:logfile_path) { '' }
       it 'raises an error' do
         expect { logs_parser }.to raise_error(RuntimeError)
