@@ -11,11 +11,11 @@ RSpec.describe LogsValidation do
         expect { logs_validation.validate_file }.to raise_error(RuntimeError, "No such file or directory @ #{logfile_path}")
       end
     end
-    
+
     context 'with correct file' do
-        it 'returns file path' do
-          expect(logs_validation.validate_file).to eq('spec/fixtures/webserver_sample.log')
-        end
+      it 'returns file path' do
+        expect(logs_validation.validate_file).to eq('spec/fixtures/webserver_sample.log')
+      end
     end
   end
 
@@ -26,9 +26,9 @@ RSpec.describe LogsValidation do
       end
     end
     context 'with correct IP and correct page' do
-        it 'returns true' do
-          expect(logs_validation.validate_log_entry('/first/1', '100.100.12.123')).to eq(true)
-        end
+      it 'returns true' do
+        expect(logs_validation.validate_log_entry('/first/1', '100.100.12.123')).to eq(true)
+      end
     end
   end
 
@@ -41,5 +41,4 @@ RSpec.describe LogsValidation do
       end
     end
   end
-
 end

@@ -23,12 +23,12 @@ RSpec.describe LogsParser do
     context 'when initialized with a correct file along with a correct log entry' do
       let(:expected_results) do
         {
-          "/help_page/1"=>["126.318.035.038", "929.398.951.889", "722.247.931.582"],
-          "/contact"=>["184.123.665.067"],
-          "/home"=>["184.123.665.067"],
-          "/about/2"=>["444.701.448.104"],
-          "/index"=>["444.701.448.104"],
-          "/about"=>["061.945.150.735"]
+          '/help_page/1' => ['126.318.035.038', '929.398.951.889', '722.247.931.582'],
+          '/contact' => ['184.123.665.067'],
+          '/home' => ['184.123.665.067'],
+          '/about/2' => ['444.701.448.104'],
+          '/index' => ['444.701.448.104'],
+          '/about' => ['061.945.150.735']
         }
       end
       it 'should produce a hash of page urls and ip_addresses' do

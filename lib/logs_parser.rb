@@ -1,6 +1,5 @@
 require_relative './logs_validation.rb'
 class LogsParser
-  
   def initialize(logfile_path)
     @logfile_path = logfile_path
     @logs_validation = LogsValidation.new(logfile_path)
@@ -21,5 +20,4 @@ class LogsParser
     end
     @logs
   end
-
 end

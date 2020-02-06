@@ -49,4 +49,5 @@ ruby parser.rb webserver.log
 1. `parser.rb` (This is the main file from where the code is executed)
 2. `lib/logs_parser.rb`
 3. `lib/logs_view.rb`
-4. `spec/`
+4. `lib/logs_validation.rb`
+5. `spec/`

@@ -8,10 +8,10 @@ RSpec.describe 'Parser' do
   describe 'Parser' do
     context 'when parses the logs file' do
       let(:most_views) do
-        {"/about/2"=>90, "/contact"=>89, "/index"=>82, "/about"=>81, "/help_page/1"=>80, "/home"=>78}
+        { '/about/2' => 90, '/contact' => 89, '/index' => 82, '/about' => 81, '/help_page/1' => 80, '/home' => 78 }
       end
       let(:unique_views) do
-        {"/index"=>23, "/home"=>23, "/contact"=>23, "/help_page/1"=>23, "/about/2"=>22, "/about"=>21}
+        { '/index' => 23, '/home' => 23, '/contact' => 23, '/help_page/1' => 23, '/about/2' => 22, '/about' => 21 }
       end
       it 'parses the file correctly and return the views' do
         expect(logs_view.most_views).to eq(most_views)
@@ -19,5 +19,4 @@ RSpec.describe 'Parser' do
       end
     end
   end
-
 end
