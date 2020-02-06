@@ -42,10 +42,10 @@ ruby parser.rb webserver.log
 2. I focused on DRY approach.
 3. I focused on SOLID design principles while coding this task. Infact, I incorporate single responsibility and open/closed design principle. 
 4. I incorporate dependency injection in the file `LogsParser` & `LogsView`.
-5. Validations like file exists, file is not empty, IP and URL are covered in this project.
+5. Validations like file exists, file is not empty, correct IP validation and correct URL validation are covered in this project.
 
 ### Important files to view:
-1. `parser.rb`
+1. `parser.rb` (This is the main file from where the code is executed)
 2. `lib/logs_parser.rb`
 3. `lib/logs_view.rb`
 4. `spec/`
