@@ -8,7 +8,7 @@ RSpec.describe LogsParser do
     context 'with empty file' do
       let(:logfile_path) { '' }
       it 'raises an error' do
-        expect { logs_parser }.to raise_error(RuntimeError)
+        expect { logs_parser }.to raise_error(RuntimeError, "No such file or directory @ #{logfile_path}")
       end
     end
   end
@@ -17,7 +17,8 @@ RSpec.describe LogsParser do
     context 'when log contains invalid entry' do
       let(:logfile_path) { 'spec/fixtures/invalid_webserver.log' }
       it 'raises an error' do
-        expect { logs_parser.parse_logs }.to raise_error(RuntimeError)
+        invalid_entry = File.read(logfile_path)
+        expect { logs_parser.parse_logs }.to raise_error(RuntimeError, "Log entry is invalid: #{invalid_entry}")
       end
     end
     context 'when initialized with a correct file along with a correct log entry' do
