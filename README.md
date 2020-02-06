@@ -32,10 +32,10 @@ ruby parser.rb webserver.log
 `rspec`
 
 ### Possible Improvements (ideas):
-1. Validations like file does not exists and correct IP validations can be moved in a seperate file for more DRY and reusable approach.
-2. It may allow to use specific IP addresses. Currently it's catching all the IP addresses.
-3. Most views and unique views methods can be further divide into in multiple methods. Currently they are in one line.
-
+1. It may allow to use specific IP addresses. Currently it's catching all the IP addresses.
+2. Most views and unique views methods can be further divide into in multiple methods. Currently they are in one line.
+3. Feature test cases can be added.
+4. Yard gem can be added for documentation.
 
 ### Approach used:
 1. TDD first approach used.
@@ -43,6 +43,7 @@ ruby parser.rb webserver.log
 3. I focused on SOLID design principles while coding this task. Infact, I incorporate single responsibility and open/closed design principle. 
 4. I incorporate dependency injection in the file `LogsParser` & `LogsView`.
 5. Validations like file exists, file is not empty, correct IP validation and correct URL validation are covered in this project.
+6. Integrations tests are also added in this project. 
 
 ### Important files to view:
 1. `parser.rb` (This is the main file from where the code is executed)
