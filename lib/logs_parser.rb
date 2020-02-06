@@ -9,8 +9,6 @@ class LogsParser
   end
 
   def parse_logs
-    return @logs unless @logs.empty?
-
     file = open @logfile_path
     file.each do |line|
       data = line.split(' ')
