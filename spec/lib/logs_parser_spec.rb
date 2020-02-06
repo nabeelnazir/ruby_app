@@ -20,9 +20,6 @@ RSpec.describe LogsParser do
         expect { logs_parser.parse_logs }.to raise_error(RuntimeError)
       end
     end
-  end
-
-  describe '#parse_logs' do
     context 'when initialized with a correct file along with a correct log entry' do
       it 'should produce a hash of page urls and ip_addresses' do
         logs = logs_parser.parse_logs
