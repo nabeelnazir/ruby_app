@@ -37,7 +37,7 @@ RSpec.describe LogsValidation do
       let(:logfile_path) { 'spec/fixtures/invalid_webserver.log' }
       it 'raises an error' do
         invalid_entry = File.read(logfile_path)
-        expect { logs_validation.invalid_log_entry(invalid_entry) }.to raise_error(RuntimeError, "Log entry is invalid: #{invalid_entry}")
+        expect { logs_validation.invalid_log_entry([invalid_entry]) }.to raise_error(RuntimeError, "Log entry is invalid: #{invalid_entry}")
       end
     end
   end

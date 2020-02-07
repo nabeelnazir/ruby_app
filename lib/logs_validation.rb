@@ -21,6 +21,6 @@ class LogsValidation
   end
 
   def invalid_log_entry(line)
-    raise "Log entry is invalid: #{line}"
+    raise "Log entry is invalid: #{line[0]}"
   end
 end
