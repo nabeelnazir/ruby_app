@@ -24,9 +24,9 @@ b. Returns the following:
 `bundle install`
 
 ### How to run app:
-```
-ruby parser.rb webserver.log
-```
+`ruby parser.rb -f webserver.log` # -f is a filename mandatory option.
+
+`ruby parser.rb --help` To list all options.
 
 ### How to run specs:
 `rspec`
@@ -41,9 +41,12 @@ ruby parser.rb webserver.log
 1. TDD first approach used.
 2. I focused on DRY approach.
 3. I focused on SOLID design principles while coding this task. Infact, I incorporate single responsibility and open/closed design principle. 
-4. I incorporate dependency injection in the file `LogsParser` & `LogsView`.
+4. I incorporate dependency injection in the file `LogsParser` & `LogsView` etc.
 5. Validations like file exists, file is not empty, correct IP validation and correct URL validation are covered in this project.
-6. Integrations tests are also added in this project. 
+6. Integrations tests are also added in this project.
+7. Ruby OptionParser used for parsing of arguments.
+8. Ruby Reek used for code smells.
+9. Rubocop used for linting.
 
 ### Important files to view:
 1. `parser.rb` (This is the main file from where the code is executed)
