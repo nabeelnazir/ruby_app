@@ -1,6 +1,8 @@
 require_relative '../../lib/logs_parser.rb'
 require_relative '../../lib/logs_view.rb'
 require_relative '../../lib/logs_validation.rb'
+require 'table_print'
+
 RSpec.describe 'Parser' do
   let(:logfile_path) { 'webserver.log' }
   let(:logs_validation) { LogsValidation.new(logfile_path) }
@@ -19,6 +21,8 @@ RSpec.describe 'Parser' do
       it 'parses the file correctly and return the views' do
         expect(logs_view.most_views).to eq(most_views)
         expect(logs_view.unique_views).to eq(unique_views)
+        output = tp [logs_view.most_views]
+        expect(output).to be_a_kind_of(TablePrint::Returnable)
       end
     end
   end
