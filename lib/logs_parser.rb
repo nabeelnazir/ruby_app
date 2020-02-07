@@ -3,10 +3,9 @@ require 'csv'
 
 # This class will get a logs file and parse the logs.
 class LogsParser
-  def initialize(logfile_path)
-    @logfile_path = logfile_path
-    @logs_validation = LogsValidation.new(logfile_path)
-    @logs_validation.validate_file
+  def initialize(logs_validation)
+    @logs_validation = logs_validation
+    @logfile_path = @logs_validation.validate_file
     @logs = {}
   end
 

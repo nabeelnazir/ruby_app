@@ -1,3 +1,4 @@
+# This class will validate the logs.
 class LogsValidation
   PAGE = %r{(?<path>[a-zA-Z0-9\/_-]*)}.freeze # page rejex. for example '/home/1'
   IP = /(?<ip>([0-9]{1,3}\.){3}([0-9]{1,3}){1})/.freeze # IP rejex.

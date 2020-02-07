@@ -1,8 +1,9 @@
 require_relative '../../lib/logs_parser.rb'
 require_relative '../../lib/logs_view.rb'
+require_relative '../../lib/logs_validation.rb'
 RSpec.describe 'Parser' do
   let(:logfile_path) { 'webserver.log' }
-  let(:logs) { LogsParser.new(logfile_path).parse_logs }
+  let(:logs) { LogsParser.new(LogsValidation.new(logfile_path)).parse_logs }
   let(:logs_view) { LogsView.new(logs) }
 
   describe 'Parser' do

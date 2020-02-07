@@ -1,7 +1,8 @@
 require_relative '../../lib/logs_parser.rb'
+require_relative '../../lib/logs_validation.rb'
 RSpec.describe LogsParser do
   let(:logfile_path) { 'spec/fixtures/webserver_sample.log' }
-  subject(:logs_parser) { described_class.new(logfile_path) }
+  subject(:logs_parser) { described_class.new(LogsValidation.new(logfile_path)) }
 
   describe '#new' do
     context 'with empty file' do

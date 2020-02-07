@@ -1,5 +1,6 @@
 require_relative 'lib/logs_parser.rb'
 require_relative 'lib/logs_view.rb'
+require_relative 'lib/logs_validation.rb'
 require 'table_print'
 require 'optparse'
 
@@ -16,7 +17,8 @@ optparse.parse!
 
 ############################# OptionParser ##############################
 
-logs = LogsParser.new(options[:file_path]).parse_logs
+logs_validation = LogsValidation.new(options[:file_path])
+logs = LogsParser.new(logs_validation).parse_logs
 logs_view = LogsView.new(logs)
 
 puts
