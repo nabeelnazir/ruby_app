@@ -1,4 +1,7 @@
 require_relative './logs_validation.rb'
+require 'csv'
+
+# This class will get a logs file and parse the logs.
 class LogsParser
   def initialize(logfile_path)
     @logfile_path = logfile_path
@@ -8,15 +11,13 @@ class LogsParser
   end
 
   def parse_logs
-    file = open @logfile_path
-    file.each do |line|
-      data = line.split(' ')
-      page = data.first
-      ip = data.last
-      unless @logs_validation.validate_log_entry(page, ip)
+    CSV.foreach(@logfile_path) do |line|
+      url, ip = line.first.split(' ')
+      # chek if log entry is valid.
+      unless @logs_validation.validate_log_entry(url, ip)
         @logs_validation.invalid_log_entry(line)
-      end # chek if log entry is valid.
-      @logs[page] ? @logs[page] << ip : @logs[page] = [ip]
+      end
+      @logs[url] ? @logs[url] << ip : @logs[url] = [ip]
     end
     @logs
   end
